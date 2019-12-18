@@ -2,6 +2,10 @@
 
 > An electron-vue project with ElementUI.
 
+## Screenshot
+
+![s](s/001.png)
+
 ## Build Setup
 
 ``` bash
