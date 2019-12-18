@@ -1,32 +1,52 @@
 <template>
-  <div id="wrapper">
-    <img id="logo" src="~@/assets/logo.png" alt="electron-vue" />
-    <main>
-      <div class="left-side">
-        <span class="title">欢迎来到新项目!</span>
-        <system-information></system-information>
-      </div>
+  <el-container>
+    <el-header style="height:66px">
+      <figure>
+        <img id="logo" src="~@/assets/logo.png" alt="electron-vue" />
+      </figure>
+    </el-header>
+    <el-container>
+      <el-aside style="width:288px;padding:20px">
+        <el-card>
+          <div slot="header" class="clearfix">
+            <span>欢迎来到新项目!</span>
+          </div>
+          <system-information></system-information>
+        </el-card>
+      </el-aside>
+      <el-main>
+        <el-card>
+          <div slot="header" class="clearfix">
+            <span>开始</span>
+          </div>
 
-      <div class="right-side">
-        <div class="doc">
-          <div class="title">开始</div>
-          <p>
-            electron-vue comes packed with detailed documentation that covers everything from
-            internal configurations, using the project structure, building your application,
-            and so much more.
-          </p>
-          <button @click="open('https://simulatedgreg.gitbooks.io/electron-vue/content/')">阅读文档</button>
-          <br />
-          <br />
-        </div>
-        <div class="doc">
-          <div class="title alt">其它文档</div>
-          <button class="alt" @click="open('https://electron.atom.io/docs/')">Electron</button>
-          <button class="alt" @click="open('https://vuejs.org/v2/guide/')">Vue.js</button>
-        </div>
-      </div>
-    </main>
-  </div>
+          <el-row>
+            <el-col :span="24">Electron-vue with ElementUI.</el-col>
+            <el-col :span="24">
+              <el-button
+                type="primary"
+                @click="open('https://simulatedgreg.gitbooks.io/electron-vue/content/')"
+              >阅读文档</el-button>
+            </el-col>
+          </el-row>
+        </el-card>
+        <br />
+        <el-card>
+          <div slot="header" class="clearfix">其它文档</div>
+          <el-row>
+            <el-col :span="24">
+              <el-button type="primary" @click="open('https://electron.atom.io/docs/')">Electron</el-button>
+              <el-button type="success" @click="open('https://vuejs.org/v2/guide/')">Vue.js</el-button>
+              <el-button
+                type="primary"
+                @click="open('https://element.eleme.io/#/zh-CN/component/container')"
+              >ElementUI</el-button>
+            </el-col>
+          </el-row>
+        </el-card>
+      </el-main>
+    </el-container>
+  </el-container>
 </template>
 
 <script>
@@ -43,89 +63,10 @@ export default {
 };
 </script>
 
-<style>
-/* @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
- */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: "Microsoft Yahei", sans-serif;
-}
-
-#wrapper {
-  background: radial-gradient(
-    ellipse at top left,
-    rgba(255, 255, 255, 1) 40%,
-    rgba(229, 229, 229, 0.9) 100%
-  );
-  height: 100vh;
-  padding: 60px 80px;
-  width: 100vw;
-}
-
+<style scoped>
 #logo {
   height: auto;
   margin-bottom: 20px;
-  width: 420px;
-}
-
-main {
-  display: flex;
-  justify-content: space-between;
-}
-
-main > div {
-  flex-basis: 50%;
-}
-
-.left-side {
-  display: flex;
-  flex-direction: column;
-}
-
-.welcome {
-  color: #555;
-  font-size: 23px;
-  margin-bottom: 10px;
-}
-
-.title {
-  color: #2c3e50;
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 6px;
-}
-
-.title.alt {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.doc p {
-  color: black;
-  margin-bottom: 10px;
-}
-
-.doc button {
-  font-size: 0.8em;
-  cursor: pointer;
-  outline: none;
-  padding: 0.75em 2em;
-  border-radius: 2em;
-  display: inline-block;
-  color: #fff;
-  background-color: #4fc08d;
-  transition: all 0.15s ease;
-  box-sizing: border-box;
-  border: 1px solid #4fc08d;
-}
-
-.doc button.alt {
-  color: #42b983;
-  background-color: transparent;
+  width: 300px;
 }
 </style>
