@@ -1,4 +1,4 @@
-# my-project
+# Electron-Vue-ElementUI
 
 > An electron-vue project with ElementUI.
 
